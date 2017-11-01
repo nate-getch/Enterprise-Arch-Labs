@@ -73,14 +73,14 @@ public class AppBook {
             session = sessionFactory.openSession();
             tx = session.beginTransaction();
                        
-            Book book1 = (Book) session.get(Book.class, 1);
+            Book book1 = (Book) session.load(Book.class, 1);
+            System.out.println("b111"+book1.getISBN());
             // update book1
             book1.setTitle("The Alchemist");
             book1.setPrice(65.99);
-            session.persist(book1);
-            
-            // delete book2
-            Book book2 = (Book) session.get(Book.class, 2);
+                        
+            // delete book with id 2 -> use lazy load
+            Book book2 = (Book) session.load(Book.class, 2);
             session.delete(book2);
                      
             tx.commit();
