@@ -8,7 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Customer {
@@ -16,10 +18,10 @@ public class Customer {
 	@GeneratedValue
 	private int id;
 	private String name;
-	
+
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "customer_id")
-	private List<Reservation> reservation;
+	private List<Reservation> reservation = new ArrayList<Reservation>();
 
 	public Customer() {
 	}
@@ -27,7 +29,6 @@ public class Customer {
 	public Customer(String name, Reservation reservation) {
 		super();
 		this.name = name;
-		this.reservation = new ArrayList<Reservation>();
 		addReservation(reservation);
 	}
 

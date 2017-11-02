@@ -23,10 +23,10 @@ public class Department {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String name;
-
-	@OneToMany(mappedBy = "department")
-	// @JoinColumn(name="employeeId")
-	private List<Employee> employee;
+	
+	// department is the owning side
+	@OneToMany//(mappedBy = "department")
+	private List<Employee> employee = new ArrayList<Employee>();
 
 	public Department() {
 	}
@@ -34,9 +34,6 @@ public class Department {
 	public Department(String name) {
 		super();
 		this.name = name;
-		this.employee = new ArrayList<Employee>();
-		// add employee thru constructor b/c every department has at least one employee
-		//addEmployee(employee);
 	}
 
 	public int getId() {

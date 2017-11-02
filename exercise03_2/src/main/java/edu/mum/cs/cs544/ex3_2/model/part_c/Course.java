@@ -19,7 +19,7 @@ public class Course {
 	
 	@ManyToMany
 	@JoinTable(name="student_course")
-	private List<Student> student;
+	private List<Student> student = new ArrayList<Student>();
 	
 	public Course() {}
 	
@@ -27,7 +27,6 @@ public class Course {
 		super();
 		this.coursenumber = coursenumber;
 		this.name = name;
-		this.student = new ArrayList<Student>();
 		addStudent(student);
 	}
 

@@ -23,7 +23,7 @@ public class Employee {
 	private String name;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "departmentId")
+	//@JoinColumn(name = "departmentId")
 	private Department department;
 
 	public Employee() {
@@ -34,6 +34,7 @@ public class Employee {
 		this.employeenumber = employeenumber;
 		this.name = name;
 		this.department = department;
+		department.addEmployee(this);
 	}
 
 	public int getId() {

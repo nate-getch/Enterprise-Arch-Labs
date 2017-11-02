@@ -24,7 +24,7 @@ public class Book {
 	private String author;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	// Optional Unidirectional ManyToOne - to avoid nullable fields, use join table
+	// Optional Unidirectional ManyToOne - to avoid nullable fields on FK, use join table
 	@JoinTable(name="book_publisher")
 	private Publisher publisher;
 	

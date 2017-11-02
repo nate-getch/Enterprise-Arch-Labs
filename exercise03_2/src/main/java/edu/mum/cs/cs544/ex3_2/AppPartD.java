@@ -1,11 +1,8 @@
 package edu.mum.cs.cs544.ex3_2;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -49,7 +46,7 @@ public class AppPartD {
             // create customer
             Customer customer1 = new Customer("Nate", reservation1);
             customer1.addReservation(reservation2); 
-         // save 
+            // save 
             session.persist(customer1);
             
             Customer customer2 = new Customer("Dani", reservation3);

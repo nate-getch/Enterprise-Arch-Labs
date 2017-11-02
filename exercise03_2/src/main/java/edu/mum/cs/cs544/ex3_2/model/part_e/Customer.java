@@ -19,7 +19,7 @@ public class Customer {
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "customer_id")
-	private List<Reservation> reservation;
+	private List<Reservation> reservation = new ArrayList<Reservation>();
 
 	public Customer() {
 	}
@@ -27,7 +27,6 @@ public class Customer {
 	public Customer(String name, Reservation reservation) {
 		super();
 		this.name = name;
-		this.reservation = new ArrayList<Reservation>();
 		addReservation(reservation);
 	}
 

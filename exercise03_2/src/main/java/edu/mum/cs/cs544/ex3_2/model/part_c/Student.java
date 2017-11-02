@@ -21,7 +21,7 @@ public class Student {
 	
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name="student_course")
-	private List<Course> course;
+	private List<Course> course = new ArrayList<Course>();
 	
 	public Student() {}
 	
@@ -30,7 +30,6 @@ public class Student {
 		this.studentid = studentid;
 		this.firstname = firstname;
 		this.lastname = lastname;
-		this.course = new ArrayList<Course>();
 	}
 
 	public String getStudentid() {
