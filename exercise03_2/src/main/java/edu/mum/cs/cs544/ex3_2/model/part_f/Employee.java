@@ -28,10 +28,12 @@ public class Employee {
 	public Employee() {
 	}
 
-	public Employee(String employeenumber, String name) {
+	public Employee(String employeenumber, String name, Department department, Office office) {
 		super();
 		this.employeenumber = employeenumber;
 		this.name = name;
+		this.department = department;
+		this.office = office;
 	}
 
 	public int getId() {
@@ -72,6 +74,12 @@ public class Employee {
 
 	public void setOffice(Office office) {
 		this.office = office;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [employeenumber=" + employeenumber + ", name=" + name + ", department=" + department
+				+ ", office=" + office + "]";
 	}
 
 }

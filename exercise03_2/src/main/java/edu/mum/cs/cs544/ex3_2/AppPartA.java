@@ -34,17 +34,16 @@ public class AppPartA {
         try {
             session = sessionFactory.openSession();
             tx = session.beginTransaction();
+                    
+            // create department
+            Department department1 = new Department("compro");
+            Department department2 = new Department("business");
             
             // create employee
-            Employee emp1 = new Employee("123", "Nati Getch");
-            Employee emp2 = new Employee("456", "Dani Abera");
-            Employee emp3 = new Employee("789", "Mike Afe");
-            
-            // create department
-            Department department1 = new Department("compro",emp1);
-            Department department2 = new Department("business",emp3);
-            department1.addEmployee(emp2);
-            
+            Employee emp1 = new Employee("123", "Nati Getch", department1);
+            Employee emp2 = new Employee("456", "Dani Abera", department1);
+            Employee emp3 = new Employee("789", "Mike Afe", department2);
+                       
             // save employees
             session.persist(emp1);
             session.persist(emp2);

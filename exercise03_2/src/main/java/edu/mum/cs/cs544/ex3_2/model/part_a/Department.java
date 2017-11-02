@@ -31,12 +31,12 @@ public class Department {
 	public Department() {
 	}
 
-	public Department(String name, Employee employee) {
+	public Department(String name) {
 		super();
 		this.name = name;
 		this.employee = new ArrayList<Employee>();
 		// add employee thru constructor b/c every department has at least one employee
-		addEmployee(employee);
+		//addEmployee(employee);
 	}
 
 	public int getId() {

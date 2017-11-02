@@ -22,10 +22,10 @@
 		<property name="hbm2ddl.auto">create</property>
 
 		<!-- Mapping files -->
-		<!-- 
+		
 		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_a.Department" />
 		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_a.Employee" />
-		
+		<!-- 
 		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_b.Book" />
 		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_b.Publisher" /> 
 		
@@ -37,10 +37,10 @@
 			
 		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_e.Customer" />
 		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_e.Reservation" />	
-		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_e.Book" />	-->
+		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_e.Book" />	
 		
 		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_f.Department" />
 		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_f.Employee" />	
-		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_f.Office" />					
+		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_f.Office" />	-->			
 	</session-factory>
 </hibernate-configuration>

@@ -17,17 +17,14 @@ public class Office {
 	private String building;
 	
 	@OneToMany(mappedBy = "office")
-	private List<Employee> employee;
+	private List<Employee> employee = new ArrayList<Employee>();
 	
 	public Office() {}
 	
-	public Office(String roomnumber, String building, Employee employee) {
+	public Office(String roomnumber, String building) {
 		super();
 		this.roomnumber = roomnumber;
 		this.building = building;
-		this.employee = new ArrayList<Employee>();
-		// each employee has at least on office
-		addEmployee(employee);
 	}
 
 	public int getId() {
@@ -65,6 +62,11 @@ public class Office {
 	public void addEmployee(Employee employee) {
 		employee.setOffice(this);
 		this.employee.add(employee);
+	}
+
+	@Override
+	public String toString() {
+		return "Office [roomnumber=" + roomnumber + ", building=" + building + "]";
 	}
 	
 }

@@ -35,21 +35,16 @@ public class AppPartF {
         try {
             session = sessionFactory.openSession();
             tx = session.beginTransaction();
+                               
+            Department department1 = new Department("compro");
+            Department department2 = new Department("business");
+            Office office1 = new Office("room001", "Verial hall");
+            Office office2 = new Office("room007", "Dalby hall");
             
             // create employee
-            Employee emp1 = new Employee("123", "Nati Getch");
-            Employee emp2 = new Employee("456", "Dani Abera");
-            Employee emp3 = new Employee("789", "Mike Afe");
-            
-            // create department
-            Department department1 = new Department("compro",emp1);
-            Department department2 = new Department("business",emp3);
-            department1.addEmployee(emp2);
-            
-            Office office1 = new Office("room001", "Verial hall", emp1);
-            office1.addEmployee(emp2);
-            Office office2 = new Office("room007", "Dalby hall", emp3);
-            //office2.addEmployee(emp3);
+            Employee emp1 = new Employee("123", "Nati Getch", department1, office1);
+            Employee emp2 = new Employee("456", "Dani Abera", department2, office1);
+            Employee emp3 = new Employee("789", "Mike Afe", department1, office2);
             
             // save employees
             session.persist(emp1);
@@ -78,9 +73,11 @@ public class AppPartF {
             @SuppressWarnings("unchecked")
             List<Employee> empList = session.createQuery("from Employee").list();
             for (Employee emp : empList) {
+            	System.out.println("===========");
                 System.out.println("Employee = " + emp.getName() + 
                 		", Department= " + emp.getDepartment().getName() +
                 		", Office=" + emp.getOffice().getRoomnumber() + " " + emp.getOffice().getBuilding());
+                //System.out.println("===");
             }
             tx.commit();
 

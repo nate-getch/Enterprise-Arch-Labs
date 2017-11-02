@@ -29,10 +29,11 @@ public class Employee {
 	public Employee() {
 	}
 
-	public Employee(String employeenumber, String name) {
+	public Employee(String employeenumber, String name, Department department) {
 		super();
 		this.employeenumber = employeenumber;
 		this.name = name;
+		this.department = department;
 	}
 
 	public int getId() {

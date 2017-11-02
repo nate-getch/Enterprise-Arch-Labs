@@ -20,17 +20,14 @@ public class Department {
 	private String name;
 
 	@OneToMany(mappedBy = "department")
-	private List<Employee> employee;
+	private List<Employee> employee = new ArrayList<Employee>();
 
 	public Department() {
 	}
 
-	public Department(String name, Employee employee) {
+	public Department(String name) {
 		super();
 		this.name = name;
-		this.employee = new ArrayList<Employee>();
-		// add employee thru constructor b/c every department has at least one employee
-		addEmployee(employee);
 	}
 
 	public int getId() {
@@ -56,6 +53,11 @@ public class Department {
 	public void addEmployee(Employee employee) {
 		employee.setDepartment(this);
 		this.employee.add(employee);
+	}
+
+	@Override
+	public String toString() {
+		return "Department [name=" + name + "]";
 	}
 
 }
