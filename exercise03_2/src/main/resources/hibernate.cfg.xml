@@ -25,13 +25,13 @@
 		<!-- 
 		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_a.Department" />
 		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_a.Employee" />
-		-->
+		
 		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_b.Book" />
 		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_b.Publisher" /> 
-		<!--
+		-->
 		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_c.Course" />
 		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_c.Student" />	
-		 
+		 <!--
 		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_d.Customer" />
 		<mapping class="edu.mum.cs.cs544.ex3_2.model.part_d.Reservation" />	 
 		

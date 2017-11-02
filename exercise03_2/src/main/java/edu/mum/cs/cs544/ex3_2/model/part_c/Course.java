@@ -17,8 +17,8 @@ public class Course {
 	private String coursenumber;
 	private String name;
 	
-	@ManyToMany
-	@JoinTable(name="student_course")
+	@ManyToMany(mappedBy="course") // mappedBy specifies its Not owner side.
+	//@JoinTable(name="student_course") // this is optional
 	private List<Student> student = new ArrayList<Student>();
 	
 	public Course() {}
@@ -56,6 +56,7 @@ public class Course {
 	
 	public void addStudent(Student student) {
 		this.student.add(student);
+		student.addCourse(this);
 	}
 
 	@Override

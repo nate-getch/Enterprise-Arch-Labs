@@ -19,8 +19,8 @@ public class Student {
 	private String firstname;
 	private String lastname;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name="student_course")
+	@ManyToMany
+	//@JoinTable(name="student_course")  // this is optional
 	private List<Course> course = new ArrayList<Course>();
 	
 	public Student() {}
@@ -64,7 +64,7 @@ public class Student {
 		this.course = course;
 	}
 	
-	public void assignCourse(Course course) {
+	public void addCourse(Course course) {
 		this.course.add(course);
 	}
 
