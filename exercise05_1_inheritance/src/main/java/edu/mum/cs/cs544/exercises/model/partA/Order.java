@@ -29,7 +29,7 @@ public class Order {
 	private Customer customer;
 	
 	@OneToMany(cascade = CascadeType.ALL)
-	private List<OrderLine> orderLine = new ArrayList();
+	private List<OrderLine> orderLineList = new ArrayList();
 	
 	public Order() {}
 
@@ -67,20 +67,20 @@ public class Order {
 	}
 
 	public List<OrderLine> getOrderLine() {
-		return orderLine;
+		return orderLineList;
 	}
 
-	public void setOrderLine(List<OrderLine> orderLine) {
-		this.orderLine = orderLine;
+	public void setOrderLine(List<OrderLine> orderLineList) {
+		this.orderLineList = orderLineList;
 	}
 	
 	public void addOrderLine(OrderLine orderLine) {
-		this.orderLine.add(orderLine);
+		this.orderLineList.add(orderLine);
 	}
 
 	@Override
 	public String toString() {
-		return "Order [orderid=" + orderId + ", date=" + date + ", customer=" + customer + ", orderLine=" + orderLine
+		return "Order [orderid=" + orderId + ", date=" + date + ", customer=" + customer + ", orderLine=" + orderLineList
 				+ "]";
 	}
 

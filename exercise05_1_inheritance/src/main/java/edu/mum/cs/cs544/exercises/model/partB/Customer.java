@@ -22,7 +22,7 @@ public class Customer {
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="customer_id")
-	private List<Order> order = new ArrayList();
+	private List<Order> orderList = new ArrayList();
 	
 	public Customer() {}
 
@@ -58,15 +58,15 @@ public class Customer {
 	}
 
 	public List<Order> getOrder() {
-		return order;
+		return orderList;
 	}
 
-	public void setOrder(List<Order> order) {
-		this.order = order;
+	public void setOrder(List<Order> orderList) {
+		this.orderList = orderList;
 	}
 	
 	public void addOrder(Order order) {
-		this.order.add(order);
+		this.orderList.add(order);
 		order.setCustomer(this);
 	}
 	

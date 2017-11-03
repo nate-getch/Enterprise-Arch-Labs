@@ -21,7 +21,7 @@ public class Customer {
 
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "customer_id")
-	private List<Reservation> reservation = new ArrayList<Reservation>();
+	private List<Reservation> reservationList = new ArrayList<Reservation>();
 
 	public Customer() {
 	}
@@ -49,15 +49,15 @@ public class Customer {
 	}
 
 	public List<Reservation> getReservation() {
-		return reservation;
+		return reservationList;
 	}
 
-	public void setReservation(List<Reservation> reservation) {
-		this.reservation = reservation;
+	public void setReservation(List<Reservation> reservationList) {
+		this.reservationList = reservationList;
 	}
 	
 	public void addReservation(Reservation reservation) {
-		this.reservation.add(reservation);
+		this.reservationList.add(reservation);
 	}
 
 }

@@ -21,7 +21,7 @@ public class Student {
 	
 	@ManyToMany
 	//@JoinTable(name="student_course")  // this is optional
-	private List<Course> course = new ArrayList<Course>();
+	private List<Course> courseList = new ArrayList<Course>();
 	
 	public Student() {}
 	
@@ -57,15 +57,15 @@ public class Student {
 	}
 
 	public List<Course> getCourse() {
-		return course;
+		return courseList;
 	}
 
-	public void setCourse(List<Course> course) {
-		this.course = course;
+	public void setCourse(List<Course> courseList) {
+		this.courseList = courseList;
 	}
 	
 	public void addCourse(Course course) {
-		this.course.add(course);
+		this.courseList.add(course);
 	}
 
 	@Override

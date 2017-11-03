@@ -17,7 +17,7 @@ public class Office {
 	private String building;
 	
 	@OneToMany(mappedBy = "office")
-	private List<Employee> employee = new ArrayList<Employee>();
+	private List<Employee> employeeList = new ArrayList<Employee>();
 	
 	public Office() {}
 	
@@ -52,16 +52,16 @@ public class Office {
 	}
 
 	public List<Employee> getEmployee() {
-		return employee;
+		return employeeList;
 	}
 
-	public void setEmployee(List<Employee> employee) {
-		this.employee = employee;
+	public void setEmployee(List<Employee> employeeList) {
+		this.employeeList = employeeList;
 	}
 	
 	public void addEmployee(Employee employee) {
 		employee.setOffice(this);
-		this.employee.add(employee);
+		this.employeeList.add(employee);
 	}
 
 	@Override

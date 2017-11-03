@@ -26,7 +26,7 @@ public class Department {
 	
 	// department is the owning side
 	@OneToMany//(mappedBy = "department")
-	private List<Employee> employee = new ArrayList<Employee>();
+	private List<Employee> employeeList = new ArrayList<Employee>();
 
 	public Department() {
 	}
@@ -53,11 +53,11 @@ public class Department {
 	}
 
 	public List<Employee> getEmployee() {
-		return employee;
+		return employeeList;
 	}
 
 	public void addEmployee(Employee employee) {
-		this.employee.add(employee);
+		this.employeeList.add(employee);
 		employee.setDepartment(this);
 	}
 

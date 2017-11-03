@@ -19,7 +19,7 @@ public class Course {
 	
 	@ManyToMany(mappedBy="course") // mappedBy specifies its Not owner side.
 	//@JoinTable(name="student_course") // this is optional
-	private List<Student> student = new ArrayList<Student>();
+	private List<Student> studentList = new ArrayList<Student>();
 	
 	public Course() {}
 	
@@ -47,15 +47,15 @@ public class Course {
 	}
 
 	public List<Student> getStudent() {
-		return student;
+		return studentList;
 	}
 
-	public void setStudent(List<Student> student) {
-		this.student = student;
+	public void setStudent(List<Student> studentList) {
+		this.studentList = studentList;
 	}
 	
 	public void addStudent(Student student) {
-		this.student.add(student);
+		this.studentList.add(student);
 		student.addCourse(this);
 	}
 
