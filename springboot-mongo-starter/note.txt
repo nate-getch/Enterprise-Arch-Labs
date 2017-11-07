@@ -1,0 +1,6 @@
+#Some Ref.
+https://www.mkyong.com/spring-boot/spring-boot-spring-data-mongodb-example/
+https://projects.spring.io/spring-data-mongodb/
+https://spring.io/guides/gs/accessing-data-mongodb/
+https://github.com/spring-guides/gs-accessing-data-mongodb
+https://docs.mongodb.com/manual/reference/operator/query/regex/
