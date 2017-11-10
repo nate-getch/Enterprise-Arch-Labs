@@ -23,13 +23,18 @@ public class OpenSessionInViewFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
 		// TODO implement actual session in view filter code
-		
-		Transaction tx = sf.getCurrentSession().beginTransaction();
-		// pass the request along the filter chain
-		System.out.println("receiving request");
-		chain.doFilter(request, response);
-		tx.commit();
-		System.out.println("sending response");
+		try {
+			Transaction tx = sf.getCurrentSession().beginTransaction();
+			// pass the request along the filter chain
+			System.out.println("receiving request");
+			chain.doFilter(request, response);
+			tx.commit();
+			System.out.println("sending response");
+		}
+		catch(RuntimeException e) {
+			System.out.println("Rollback " + e);
+		}
+
 	}
 
 	public void destroy() {
