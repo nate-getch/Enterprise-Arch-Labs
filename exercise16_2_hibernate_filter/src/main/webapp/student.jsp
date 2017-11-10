@@ -21,8 +21,9 @@
 </head>
 <body>
 	<form method="GET" action="StudentsCourseServlet">
-		Student ID = <input type="text" name="studentid" />
+		Student ID = <input type="text" name="studentid" /> 
 		<input type="submit" value="Show student Details" />
+		<p>Valid Student ID: 11334</p>
 	</form>
 	
 	<c:if test="${student != null}">
