@@ -8,18 +8,20 @@ import javax.persistence.Id;
 public class Customer {
 	@Id
 	@GeneratedValue
-	private int id;
-	private String name;
-
-	public int getId() {
+	long id;
+	
+	public Customer(){
+		
+	}
+	public long getId() {
 		return id;
 	}
 
-	private void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
-	public Customer(){}
+	private String name;
 
 	public Customer(String name) {
 		this.name = name;
@@ -33,4 +35,5 @@ public class Customer {
 		this.name = name;
 	}
 	
+
 }

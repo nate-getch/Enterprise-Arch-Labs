@@ -1,34 +1,37 @@
 package cs544.exercise16_1.bank.domain;
 
-import javax.persistence.*;
 import java.util.*;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Account {
 	@Id
-	private long accountnumber;
-
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn
-	private Collection<AccountEntry> entryList = new ArrayList<AccountEntry>();
-
-	@OneToOne(cascade = CascadeType.ALL)
-	private Customer customer;
-
-	public Account(){}
-
+	long accountnumber;
+	@OneToMany(cascade=CascadeType.ALL)//, fetch = FetchType.EAGER)
+	Collection<AccountEntry> entryList = new ArrayList<AccountEntry>();
+	@ManyToOne(cascade= CascadeType.ALL)
+	Customer customer;
+	
+	public Account (){
+		
+	}
 	public Account (long accountnr){
 		this.accountnumber = accountnr;
 	}
-
 	public long getAccountnumber() {
 		return accountnumber;
 	}
-
 	public void setAccountnumber(long accountnumber) {
 		this.accountnumber = accountnumber;
 	}
-
 	public double getBalance() {
 		double balance=0;
 		for (AccountEntry entry : entryList) {
@@ -36,7 +39,6 @@ public class Account {
 		}
 		return balance;
 	}
-
 	public void deposit(double amount){
 		AccountEntry entry = new AccountEntry(new Date(), amount, "deposit", "", "");
 		entryList.add(entry);
@@ -60,7 +62,6 @@ public class Account {
 	public Customer getCustomer() {
 		return customer;
 	}
-
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
@@ -68,7 +69,4 @@ public class Account {
 		return entryList;
 	}
 
-	public void setEntryList(Collection<AccountEntry> entryList) {
-		this.entryList = entryList;
-	}
 }
