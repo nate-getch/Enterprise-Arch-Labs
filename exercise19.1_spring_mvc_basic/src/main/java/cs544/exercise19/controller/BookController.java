@@ -27,19 +27,14 @@ public class BookController {
 	}
 
 	@RequestMapping(value="/addBook", method=RequestMethod.GET)
-	public String addBook(/*@ModelAttribute("newBook") Book book*/) {
+	public String addBook() {
 		return "book/add";
 	}
 
 	@RequestMapping(value="/books", method=RequestMethod.POST)
 	public String add(Book book) {
-		try{
-			bookService.add(book);
-			return "redirect:/books";
-		}
-		catch(Exception e){
-			throw new NoSuchResourceException("Unable to Add Book",book.getId());
-		}
+		bookService.add(book);
+		return "redirect:/books";
 	}
 
 	@RequestMapping(value="/books/{id}", method=RequestMethod.GET)

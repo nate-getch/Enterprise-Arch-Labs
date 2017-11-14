@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd">
 <html>
 <head>
@@ -5,7 +6,7 @@
 <title>Add a Book</title>
 </head>
 <body>
-	<form action="/books" method="post">
+	<form action='<c:url value = "/books"/>' method="post">
 	<table>
 		<tr>
 			<td>title:</td>

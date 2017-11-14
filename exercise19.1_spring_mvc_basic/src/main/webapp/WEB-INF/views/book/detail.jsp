@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd">
 <html>
 <head>
@@ -5,7 +6,7 @@
 <title>Add a Book</title>
 </head>
 <body>
-	<form action="/books/${book.id}" method="post">
+	<form action='<c:url value = "/books/${book.id}"/>' method="post">
 	<table>
 		<tr>
 			<td>title:</td>
@@ -26,7 +27,7 @@
 	</table>
 	<input type="submit" value="update"/>
 	</form>
-	<form action="delete?bookId=${book.id}" method="post">
+	<form action='<c:url value = "delete?bookId=${book.id}"/>' method="post">
 		<button type="submit">Delete</button>
 	</form>
 </body>

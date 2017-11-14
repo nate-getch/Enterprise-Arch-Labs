@@ -11,7 +11,7 @@ import java.util.List;
 public class BookService implements IBookService {
 
     @Autowired
-    IBookDao bookDao;
+    private IBookDao bookDao;
 
     public List<Book> getAll(){
         return (List<Book>) bookDao.getAll();

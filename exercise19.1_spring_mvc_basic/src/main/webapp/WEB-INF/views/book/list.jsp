@@ -16,7 +16,7 @@
 		<td>${book.ISBN}</td>
 		<td>${book.author}</td>
 		<td>${book.price}</td>
-		<td><a href="books/${book.id}">edit</a></td>
+		<td><a href='<c:url value = "/books/${book.id}"/>'>edit</a></td>
 	</tr>
 	</c:forEach>
 	</table>

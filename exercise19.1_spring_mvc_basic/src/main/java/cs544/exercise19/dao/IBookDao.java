@@ -4,7 +4,6 @@ import cs544.exercise19.domain.Book;
 
 import java.util.List;
 
-
 public interface IBookDao {
 
 	public abstract List<Book> getAll();
