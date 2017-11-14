@@ -1,2 +1,2 @@
 # Enterprise-Arch-Labs
-Enterprise Architecture course at MUM.
+Simple lab exercises from Enterprise Architecture course at MUM.
